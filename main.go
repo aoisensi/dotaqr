@@ -45,6 +45,7 @@ func main() {
 	}
 
 	api.Channel(channel).CreateMessage(":robot: Launched. Beep boop...")
+	log.Println("Lanched.")
 
 	// main loop
 	for {
