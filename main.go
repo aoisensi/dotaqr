@@ -10,9 +10,9 @@ import (
 	"github.com/aoisensi/go-discordapp/discord"
 )
 
-var channel = discord.Snowflake(os.Getenv("DOTACHAN_DISCORD_CHANNEL_ID"))
+var channel = discord.Snowflake(os.Getenv("DOTAQR_DISCORD_CHANNEL_ID"))
 
-var token = os.Getenv("DOTACHAN_DISCORD_TOKEN")
+var token = os.Getenv("DOTAQR_DISCORD_TOKEN")
 
 var gw *discord.Gateway
 
@@ -76,7 +76,7 @@ func loopTwitch() {
 
 func getTwitches() (*Twitches, error) {
 	req, _ := http.NewRequest("GET", "https://api.twitch.tv/kraken/streams?game=Dota+2&broadcaster_language=ja", nil)
-	req.Header.Add("Client-Id", os.Getenv("DOTACHAN_TWITCH_CLIENT_ID"))
+	req.Header.Add("Client-Id", os.Getenv("DOTAQR_TWITCH_CLIENT_ID"))
 	resp, err := http.DefaultClient.Do(req)
 	if err != nil {
 		return nil, err
